@@ -365,7 +365,7 @@ public class QL_NhanVien extends JFrame {
 		lblNewLabel_1_5.setBounds(550, 391, 123, 41);
 		panel_NhanVien.add(lblNewLabel_1_5);
 
-		final JComboBox cbx_timkiem = new JComboBox();
+		JComboBox cbx_timkiem = new JComboBox();
 		cbx_timkiem.setModel(new DefaultComboBoxModel(new String[] { "Mã", "Tên", "Giới Tính", "Chức vụ" }));
 		cbx_timkiem.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		cbx_timkiem.setBounds(667, 396, 149, 31);

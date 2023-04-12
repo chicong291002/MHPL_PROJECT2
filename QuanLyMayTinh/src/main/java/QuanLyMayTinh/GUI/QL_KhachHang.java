@@ -17,7 +17,6 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
@@ -55,7 +54,27 @@ public class QL_KhachHang extends JFrame {
 	DefaultTableModel model_KH = new DefaultTableModel();
 	JRadioButton rbt_Nam,rbt_Nu;
 	private boolean gender = true;
-
+	/**
+	 * Launch the application.
+	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					new MyConnect();
+//					QL_KhachHang frame = new QL_KhachHang();
+//					frame.setVisible(true);
+//					frame.loadingKhachHang();
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//
+//	/**
+//	 * Create the frame.
+//	 */
 	public QL_KhachHang() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1116, 822);
@@ -318,7 +337,7 @@ public class QL_KhachHang extends JFrame {
 	private void loadingKhachHang() {
 		KHBUS.docDanhSach();
 		model_KH.setRowCount(0);
-		List<KhachHang> dskh = KHBUS.getListKhachHang();
+		ArrayList<KhachHang> dskh = KHBUS.getListKhachHang();
 		Vector header = new Vector();
 		header.add("Mã KH");
 		header.add("Họ");
@@ -397,7 +416,7 @@ public class QL_KhachHang extends JFrame {
 	}
 	private void timKiemChiTieu() {
 		model_KH.setRowCount(0);
-		List<KhachHang> dskh = KHBUS.timKiemKhachHang(txt_tu.getText(), txt_den.getText());
+		ArrayList<KhachHang> dskh = KHBUS.timKiemKhachHang(txt_tu.getText(), txt_den.getText());
         if (dskh == null)
             return;
         Vector header = new Vector();
@@ -468,7 +487,7 @@ public class QL_KhachHang extends JFrame {
             String gioiTinh = tbl_KH.getValueAt(i, 3) + "";
             String tongchitieu = tbl_KH.getValueAt(i, 4) + "";
 
-            //.nhapExcel(ma,ho, ten, gioiTinh, tongchitieu);
+            KHBUS.nhapExcel(ma,ho, ten, gioiTinh, tongchitieu);
 
         }
     }

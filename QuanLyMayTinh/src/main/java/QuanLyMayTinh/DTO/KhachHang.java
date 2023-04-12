@@ -1,5 +1,13 @@
 package QuanLyMayTinh.DTO;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="khachhang")
 public class KhachHang {
 	private int maKH;
 	private String hoKH;
@@ -19,7 +27,9 @@ public class KhachHang {
 		this.tongchitieu = tongchitieu;
 		this.tinhTrang = tinhTrang;
 	}
-
+@Id
+@GeneratedValue
+@Column(name="maKH")
 	public int getMaKH() {
 		return maKH;
 	}
@@ -27,7 +37,7 @@ public class KhachHang {
 	public void setMaKH(int maKH) {
 		this.maKH = maKH;
 	}
-
+@Column(name="Ho")
 	public String getHoKH() {
 		return hoKH;
 	}
@@ -35,7 +45,7 @@ public class KhachHang {
 	public void setHoKH(String hoKH) {
 		this.hoKH = hoKH;
 	}
-
+@Column(name="Ten")
 	public String getTenKH() {
 		return tenKH;
 	}
@@ -43,7 +53,7 @@ public class KhachHang {
 	public void setTenKH(String tenKH) {
 		this.tenKH = tenKH;
 	}
-
+@Column(name="Gioitinh")
 	public String getGioitinh() {
 		return gioitinh;
 	}
@@ -51,7 +61,7 @@ public class KhachHang {
 	public void setGioitinh(String gioitinh) {
 		this.gioitinh = gioitinh;
 	}
-
+@Column(name="Tongchitieu")
 	public int getTongchitieu() {
 		return tongchitieu;
 	}
@@ -59,7 +69,7 @@ public class KhachHang {
 	public void setTongchitieu(int tongchitieu) {
 		this.tongchitieu = tongchitieu;
 	}
-
+@Column(name="Tinhtrang")
 	public int getTinhTrang() {
 		return tinhTrang;
 	}

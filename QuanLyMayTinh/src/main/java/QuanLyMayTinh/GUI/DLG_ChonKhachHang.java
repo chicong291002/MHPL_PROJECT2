@@ -24,7 +24,6 @@ import QuanLyMayTinh.DTO.KhachHang;
 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -145,7 +144,7 @@ public class DLG_ChonKhachHang extends JFrame {
 	private void loadingKhachHang() {
 		KHBUS.docDanhSach();
 		model_KH.setRowCount(0);
-		List<KhachHang> dskh = KHBUS.getListKhachHang();
+		ArrayList<KhachHang> dskh = KHBUS.getListKhachHang();
 		Vector header = new Vector();
 		header.add("Mã KH");
 		header.add("Họ");

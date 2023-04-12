@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class CTHoaDonDAO {
 
     public ArrayList<CTHoaDon> getListCTHoaDon() {
-        ArrayList<CTHoaDon> dscthd = new ArrayList<CTHoaDon>();
+        ArrayList<CTHoaDon> dscthd = new ArrayList<>();
         try {
             String sql = "SELECT * FROM cthoadon";
             Statement stmt = MyConnect.conn.createStatement();
@@ -39,7 +39,7 @@ public class CTHoaDonDAO {
     }
 
     public ArrayList<CTHoaDon> getListCTHoaDonTheoMaHD(int maHD) {
-        ArrayList<CTHoaDon> dscthd = new ArrayList<CTHoaDon>();
+        ArrayList<CTHoaDon> dscthd = new ArrayList<>();
         try {
             String sql = "SELECT * FROM cthoadon WHERE MaHD="+maHD;
             Statement stmt = MyConnect.conn.createStatement();
@@ -60,7 +60,7 @@ public class CTHoaDonDAO {
     }
 
     public ArrayList<CTHoaDon> getListCTHoaDonTheoMaSP(int maSP) {
-        ArrayList<CTHoaDon> dscthd = new ArrayList<CTHoaDon>();
+        ArrayList<CTHoaDon> dscthd = new ArrayList<>();
         try {
             String sql = "SELECT * FROM cthoadon WHERE MaSP="+maSP;
             Statement stmt = MyConnect.conn.createStatement();

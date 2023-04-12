@@ -142,13 +142,13 @@ public class QL_KhuyenMaiGUI extends JFrame {
 		
 		date_BĐ = new JDateChooser();
 		date_BĐ.setDateFormatString("dd/MM/yyyy");
-		/////date_BĐ.getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 15));
+		date_BĐ.getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 15));
 		date_BĐ.setBounds(482, 10, 162, 45);
 		panel_2.add(date_BĐ);
 		
 		date_KT = new JDateChooser();
 		date_KT.setDateFormatString("dd/MM/yyyy");
-		//date_KT.getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 15));
+		date_KT.getSpinner().setFont(new Font("Tahoma", Font.PLAIN, 15));
 		date_KT.setBounds(482, 65, 162, 43);
 		panel_2.add(date_KT);
 		

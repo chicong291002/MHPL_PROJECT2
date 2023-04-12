@@ -6,25 +6,24 @@ import QuanLyMayTinh.DTO.NhanVien;
 import MyCustom.MyDialog;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public class KhachHangBUS {
 
-    private List<KhachHang> listKhachHang = null;
+    private ArrayList<KhachHang> listKhachHang = null;
     private KhachHangDAO khachHangDAO = new KhachHangDAO();
 
     public void docDanhSach() {
         this.listKhachHang = khachHangDAO.getListKhachHang();
     }
 
-    public List<KhachHang> getListKhachHang() {
+    public ArrayList<KhachHang> getListKhachHang() {
         if (listKhachHang == null)
             docDanhSach();
         return listKhachHang;
     }
 
-    public List<KhachHang> timKiemKhachHang(String txtMin, String txtMax) {
+    public ArrayList<KhachHang> timKiemKhachHang(String txtMin, String txtMax) {
         if (txtMax.trim().equals("") && txtMin.trim().equals(""))
             return listKhachHang;
         try {
@@ -100,7 +99,7 @@ public class KhachHangBUS {
         kh.setTenKH(ten);
         kh.setGioitinh(gioiTinh);
         kh.setTongchitieu(tongchitieu);
-        boolean flag = khachHangDAO.updateKhachHang(makh,kh);
+        boolean flag = khachHangDAO.updateKhachHang( kh);
         if (flag) {
             new MyDialog("Sửa thành công!", MyDialog.SUCCESS_DIALOG);
         } else {
@@ -138,5 +137,16 @@ public class KhachHangBUS {
     	}
     	return false;
     }
-
+    public boolean nhapExcel(String ma,String ho, String ten, String gioiTinh, String tongchitieu) {
+    	int manv = Integer.parseInt(ma);
+    	int tongct = Integer.parseInt(tongchitieu);
+        KhachHang kh = new KhachHang();
+        kh.setMaKH(manv);
+        kh.setHoKH(ho);
+        kh.setTenKH(ten);
+        kh.setGioitinh(gioiTinh);
+        kh.setTongchitieu(tongct);
+        boolean flag = khachHangDAO.nhapExcel(kh);
+        return flag;
+    }
 }
