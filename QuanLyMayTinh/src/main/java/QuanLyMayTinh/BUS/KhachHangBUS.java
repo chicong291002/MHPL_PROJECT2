@@ -1,10 +1,12 @@
 package QuanLyMayTinh.BUS;
 
-import java.util.ArrayList;
-
-import MyCustom.MyDialog;
 import QuanLyMayTinh.DAO.KhachHangDAO;
 import QuanLyMayTinh.DTO.KhachHang;
+import QuanLyMayTinh.DTO.NhanVien;
+import MyCustom.MyDialog;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class KhachHangBUS {
 
@@ -97,7 +99,7 @@ public class KhachHangBUS {
         kh.setTenKH(ten);
         kh.setGioitinh(gioiTinh);
         kh.setTongchitieu(tongchitieu);
-        boolean flag = khachHangDAO.updateKhachHang(makh,kh);
+        boolean flag = khachHangDAO.updateKhachHang( kh);
         if (flag) {
             new MyDialog("Sửa thành công!", MyDialog.SUCCESS_DIALOG);
         } else {
